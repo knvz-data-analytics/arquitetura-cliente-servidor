@@ -1,0 +1,7 @@
+Nota Sugerida sobre o Uso de IA (Para anexar à sua entrega)
+
+Nota sobre o uso de Inteligência Artificial:
+Para a realização desta prática avaliada, utilizei o modelo de IA Gemini como um assistente de estudos. 
+A ferramenta foi utilizada para compreender os conceitos teóricos solicitados no Exercício 1 e para visualizar a estrutura base de uma API construída com FastAPI no Exercício 4. 
+Em vez de simplesmente copiar as respostas, utilizei as explicações fornecidas pela IA para estudar os códigos de status HTTP e os métodos REST (Exercício 2 e 3), 
+adaptando os exemplos de e-commerce e validando a sintaxe do Pydantic na documentação oficial do FastAPI.

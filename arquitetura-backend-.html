@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entenda a arquitetura cliente-servidor, o papel do backend, como ele processa requisições HTTP, a diferença entre servidor de hardware e software, e o papel das APIs.">
+    <title>Arquitetura Cliente-Servidor e Backend</title>
+</head>
+
+<body>
+    <header>
+        <h1>Arquitetura Cliente-Servidor</h1>
+    </header>
+    
+    <main>
+        <section id="diagrama">
+            <h2>Fluxo da Requisição</h2>
+            <div class="diagrama-container">
+                <div class="caixa front">Frontend<br>(Cliente)</div>
+                <div class="seta">&#10230;<br>Requisição</div>
+                <div class="caixa">Backend<br>(Servidor)</div>
+                <div class="seta">&#10230;<br>Consulta</div>
+                <div class="caixa db">Banco de Dados</div>
+            </div>
+            <div class="diagrama-container" style="margin-top: -20px; background: none;">
+                <div class="seta" style="visibility: hidden;"></div>
+                <div class="seta">&#10229;<br>Resposta</div>
+                <div class="seta" style="visibility: hidden;"></div>
+                <div class="seta">&#10229;<br>Dados</div>
+                <div class="seta" style="visibility: hidden;"></div>
+            </div>
+        </section>
+
+        <section id="papel-backend">
+            <h2>O Papel do Backend</h2>
+            <p>O backend (ou lado do servidor) é o cérebro da aplicação. Ele é responsável pelas regras de negócio, pela segurança, pela autenticação de usuários e pela comunicação com o banco de dados. Ele garante que os dados solicitados pelo cliente (frontend) sejam processados, validados e retornados corretamente.</p>
+        </section>
+
+        <section id="processamento-http">
+            <h2>Como o Backend Processa Requisições HTTP</h2>
+            <ol>
+                <li><strong>Recepção:</strong> O servidor recebe a requisição HTTP do cliente (ex: GET /usuarios).</li>
+                <li><strong>Roteamento:</strong> A aplicação identifica qual bloco de código (controlador/função) deve lidar com aquela rota específica.</li>
+                <li><strong>Processamento:</strong> O backend executa a lógica de negócio, valida credenciais e processa os dados (ex: busca usuários no banco de dados).</li>
+                <li><strong>Resposta:</strong> O servidor formata os dados (geralmente em JSON) e envia uma resposta HTTP de volta ao cliente com um código de status (ex: 200 OK).</li>
+            </ol>
+        </section>
+
+        <section id="hardware-vs-software">
+            <h2>Servidor de Hardware vs. Servidor de Software</h2>
+            <ul>
+                <li><strong>Servidor de Hardware:</strong> É a máquina física (computador) onde os arquivos e softwares estão hospedados. Possui processador, memória RAM e armazenamento físico, podendo estar em um data center.</li>
+                <li><strong>Servidor de Software:</strong> É o programa executado no hardware que "escuta" e responde a requisições de rede (ex: Apache, Nginx, ou uma aplicação Node.js/FastAPI). Ele implementa os protocolos de comunicação como o HTTP.</li>
+            </ul>
+        </section>
+
+        <section id="papel-apis">
+            <h2>O Papel das APIs no Backend</h2>
+            <p>As APIs (Application Programming Interfaces) atuam como "pontes" ou "garçons". Elas definem um conjunto de regras e endpoints que permitem que diferentes sistemas de software se comuniquem. No desenvolvimento backend moderno, construímos APIs para que frontends web, aplicativos móveis e outros serviços possam consumir os dados e funcionalidades do servidor de forma padronizada e segura.</p>
+        </section>
+    </main>
+</body>
+</html>
