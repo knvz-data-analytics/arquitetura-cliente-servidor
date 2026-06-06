@@ -15,10 +15,10 @@ Authorization: Bearer eyJhbGciOi...
 Explicação dos componentes:
 1. POST: É o Método HTTP (verbo). Indica que o cliente deseja enviar dados ao servidor para criar um novo recurso.
 2. /api/v1/usuarios: É o Caminho (Path) ou URI. Indica o endpoint onde o recurso será manipulado.
-3. HTTP/1.1: É a versão do protocolo HTTP utilizada na comunicação.
+3. HTTP/1.1: É a versão do protocolo HTTP utilizada.
 4. Host: sistema.exemplo.com: É um Header (Cabeçalho) que especifica o domínio raiz do servidor de destino.
 5. Content-Type: application/json: É um Header que informa ao servidor que o corpo da requisição (payload) está no formato JSON.
-6. Authorization: Bearer eyJhbGciOi...: É um Header de segurança contendo um token (geralmente JWT) para provar que o usuário está autenticado e tem permissão para realizar a ação.
+6. Authorization: Bearer eyJhbGciOi...: É um Header de segurança contendo um token um dos padrões que conheço é JWT, para provar que o usuário está autenticado e tem permissão para realizar a ação.
 7. {"nome": "Maria Silva", ...}: É o Corpo (Body) da requisição, contendo os dados reais que serão processados ou armazenados pelo servidor.
 
 ======================================================
@@ -34,15 +34,15 @@ PARTE B - Códigos de Status
 PARTE C - Métodos HTTP
 ======================================================
 1. GET
-   - Quando usar: Para solicitar/ler dados de um recurso sem alterá-lo (operações seguras e idempotentes).
-   - Exemplo: Obter a lista de produtos (GET /api/produtos) ou dados de um usuário específico (GET /api/usuarios/5).
+   - Quando usar: Para solicitar/ler dados de um recurso sem mudar o dado origem.
+   - Exemplo: Obter a lista de produtos (GET /api/produtos) ou dados de um usuário específico (GET /api/usuarios/{id}).
 
 2. POST
-   - Quando usar: Para enviar dados ao servidor com a intenção de criar um novo recurso (não é idempotente).
+   - Quando usar: Para enviar dados ao servidor com a intenção de criar um novo recurso.
    - Exemplo: Criar um novo pedido no e-commerce (POST /api/pedidos com dados do pedido no corpo).
 
 3. PUT
-   - Quando usar: Para atualizar completamente um recurso existente ou criá-lo caso não exista (idempotente).
+   - Quando usar: Para atualizar completamente um recurso existente ou criá-lo caso não exista.
    - Exemplo: Atualizar todos os dados de um produto (PUT /api/produtos/12 com nome, preço, estoque atualizados no corpo).
 
 4. DELETE

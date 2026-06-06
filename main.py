@@ -2,19 +2,19 @@ from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel, EmailStr
 from typing import List
 
-# Inicialização do app FastAPI
+# FastAPI
 app = FastAPI(title="API de Gerenciamento de Usuários")
 
-# Modelo Pydantic para validação de dados
+# Pydantic pra validação
 class Usuario(BaseModel):
     id: int
     nome: str
-    email: str # Usando str para simplificar, mas 'EmailStr' do pacote 'pydantic[email]' é ideal para produção
+    email: str # Usando str
 
-# Armazenamento em memória (lista Python)
+# Armazenamento em memória
 usuarios_db: List[Usuario] = []
 
-# Endpoint 1: Criar usuário (POST)
+# Endpoint 1: (POST)
 @app.post("/usuarios", response_model=Usuario, status_code=status.HTTP_201_CREATED)
 def criar_usuario(usuario: Usuario):
     # Tratamento de erro: Verifica se o ID já existe
@@ -37,7 +37,7 @@ def criar_usuario(usuario: Usuario):
     usuarios_db.append(usuario)
     return usuario
 
-# Endpoint 2: Listar usuários (GET)
+# Endpoint 2: (GET)
 @app.get("/usuarios", response_model=List[Usuario], status_code=status.HTTP_200_OK)
 def listar_usuarios():
     # Retorna a lista em memória

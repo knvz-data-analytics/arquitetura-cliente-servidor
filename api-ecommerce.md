@@ -1,3 +1,4 @@
+```markdown
 # Design da API RESTful: E-commerce Simples
 
 ## 1. Design dos Endpoints REST
@@ -32,6 +33,11 @@ Content-Type: application/json
   "quantidade": 2
 }
 
+```
+
+**Resposta:**
+
+```http
 HTTP/1.1 201 Created
 Content-Type: application/json
 
@@ -48,12 +54,22 @@ Content-Type: application/json
   }
 }
 
+```
+
 ### Exemplo 2: Buscar detalhes de um Produto (GET)
 
+**Requisição:**
+
+```http
 GET /api/v1/produtos/105 HTTP/1.1
 Host: api.ecommerce.com
 Accept: application/json
 
+```
+
+**Resposta:**
+
+```http
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -69,14 +85,23 @@ Content-Type: application/json
   }
 }
 
-3. Implementação de HATEOAS
-Como demonstrado nos exemplos acima, a API implementa HATEOAS (Hypermedia as the Engine of Application State) retornando um objeto _links no final das respostas. Isso permite que o cliente navegue pela API dinamicamente, descobrindo quais ações podem ser tomadas em seguida (como visualizar o produto do pedido ou cancelar o pedido) baseadas no estado atual do recurso.
+```
 
-4. Estrutura de Tratamento de Erros
+---
+
+## 3. Implementação de HATEOAS
+
+Partindo do exemplo acima, a API implementa HATEOAS retornando um objeto `_links` no final das respostas. Permite que o cliente navegue pela API dinamicamente, descobrindo quais ações podem ser tomadas em seguida baseadas no estado atual do recurso.
+
+---
+
+## 4. Estrutura de Tratamento de Erros
+
 A API utilizará um formato padronizado de erro para garantir previsibilidade aos clientes.
 
-Exemplo de Resposta de Erro (404 Not Found):
+**Exemplo de Resposta de Erro (404 Not Found):**
 
+```http
 HTTP/1.1 404 Not Found
 Content-Type: application/json
 
@@ -89,6 +114,8 @@ Content-Type: application/json
   "timestamp": "2026-06-04T13:26:50Z"
 }
 
-## Exercício 4: Implementação de API REST com FastAPI
+```
 
-No arquivo `main.py`. Pacotes necessários rodando `pip install fastapi uvicorn pydantic` e, para testar a aplicação, rode `uvicorn main:app --reload`.
+```
+
+```
